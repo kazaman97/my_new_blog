@@ -1,0 +1,15 @@
+<div class="col-lg-12">
+  <h1><%= @post.title %></h1>
+  <p>カテゴリ: <%= @post.category %></p>
+  <p>投稿日: <%= @post.created_at %></p>
+  <p>最終更新日: <%= @post.updated_at %></p>
+  <hr>
+  <h3>本文</h3>
+  <p>
+    <%= simple_format(@post.body) %>
+  </p>
+  <hr>
+  <%= link_to "編集", edit_post_path(@post), class: "btn btn-default" %>
+  <%= link_to "削除する", post_path(@post), class:"btn btn-danger", method: :delete, data: {confirm: "本当に削除しますか?"} %>
+  <%= link_to "戻る", "/posts", class:"btn btn-default" %>
+</div>

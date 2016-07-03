@@ -5,10 +5,51 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 </head>
 <body>
 
-<%= yield %>
+<div class="sitename">
+  <div class="container">
+    <a href="#">My New Blog</a>
+  </div>
+</div>
+
+<!-- Static navbar -->
+<div class="navbar navbar-default" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      </button>
+    </div>
+   <div class="navbar-collapse collapse">
+     <ul class="nav navbar-nav">
+     <li><a href="/posts"><i class="fa fa-home"></i> Home</a></li>
+     <li><a href="/posts/new"><i class="fa fa-info"></i> 作成</a></li>
+     <li><a href="/users/sign_up"><i class="fa fa-jpy"></i>サインアップ</a></li>
+     <li><a href="#contact"><i class="fa fa-comments-o"></i>ログイン</a></li>
+     </ul>
+   </div><!--/.nav-collapse -->
+ </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <%= yield %>
+  </div>
+</div>
 
 </body>
 </html>
